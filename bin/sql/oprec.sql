@@ -8,7 +8,8 @@ CREATE TABLE recruits(
     birth_place text,
     birth_date text,
     residence_address text,
-    motivation text
+    motivation text,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
 INSERT INTO recruits(full_name, gender, email, phone_number, major, birth_place, birth_date, residence_address, motivation)

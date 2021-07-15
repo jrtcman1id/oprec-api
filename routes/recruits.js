@@ -3,10 +3,8 @@ const pool = require('../db');
 const router = Router();
 
 router.get('/', (request, response, next) => {
-    console.log('here');
     pool.query('SELECT * FROM recruits ORDER BY id ASC', (err, res) => {
         if(err){return next(err);}
-        console.log('here');
         response.json(res.rows);
     });
 });
@@ -32,7 +30,6 @@ router.post('/', (request, response, next) => {
             // response.redirect(`/recruits`);
             pool.query('SELECT * FROM recruits ORDER BY id DESC LIMIT 1', (err, res) => {
                 if(err){return next(err);}
-                console.log('here');
                 response.json(res.rows);
             });
         });
